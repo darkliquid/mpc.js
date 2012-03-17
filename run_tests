@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+try {
+	var reporter = require('nodeunit').reporters.default;
+}
+catch(e) {
+	console.log("Cannot find nodeunit.");
+	console.log("You can install nodeunit by:");
+	console.log("");
+	console.log("    npm install nodeunit");
+	console.log("");
+	process.exit();
+}
+
+process.chdir(__dirname);
+reporter.run(['test']);
